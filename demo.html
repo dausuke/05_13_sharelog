@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/demo.css" >
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+
+    <title>sharelog</title>
+
+</head>
+<body>
+    <script src="js/demo.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/api.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAYaOy_ZBgAAVm5G3GLWLSFMbgt1aAZWL0",
+            authDomain: "kadai05-df4da.firebaseapp.com",
+            projectId: "kadai05-df4da",
+            storageBucket: "kadai05-df4da.appspot.com",
+            messagingSenderId: "1069237014639",
+            appId: "1:1069237014639:web:f1fa9d00d2e01f958b7d9a"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script
+        src='https://www.bing.com/api/maps/mapcontrol?key=AhmwRaCO2UjOzjohgXiSXzY3W7oTJh4Mbbt4qChfY17WbdgxXtUTAr6mppUmsbZ_'async defer>
+    </script>
+    <!-- <script
+        src="https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPUhUakxxemMzSVcxTyZzPWNvbnN1bWVyc2VjcmV0Jng9ODY-"></script> -->
+    <header>
+        <h1>sharelog</h1>
+    </header>
+    <main>
+<!-- タイムライン -->
+        <div class="content active" id="home">
+            <!-- <div id="map"></div> -->
+            <div id="timeline"></div>
+            <ul class="tab">
+                <li class="active"><a href="#mypage" class="buttom3d">Mypage</a></li>
+                <li><a href="#shopsarch" class="buttom3d">Shop-Sarch</a></li>
+                <li><a href="#firendsarch" class="buttom3d">Firend-Sarch</a></li>
+                <li><a href="#list" class="buttom3d">Massege</a></li>
+            </ul>
+        </div>
+<!-- マイページ -->
+    <div class="content" id="mypage">
+        <div id="mypagetimeline"></div>
+        <div class="name">
+            <p>店名</p>
+            <input type="text" id="name">
+        </div>
+        <div class="area">
+            <p>エリア</p>
+            <input type="text" id="area">
+        </div>
+        <div class="pnumber">
+            <p>電話番号</p>
+            <input type="text" id="pnumber">
+        </div>
+        <div class="evaluation">
+            <p>評価</p>
+            <select type="text" id="evaluation">
+                <option value="">選択</option>
+                <option value="★★★★★">★★★★★</option>
+                <option value="★★★★">★★★★</option>
+                <option value="★★★">★★★</option>
+                <option value="★★">★★</option>
+                <option value="★">★</option>
+            </select>
+        </div>
+        <div class="category">
+            <p>カテゴリー</p>
+            <select type="text" id="category">
+                <option value="">選択</option>
+                <option value="ファッション">ファッション</option>
+                <option value="ランチ">ランチ</option>
+                <option value="ディナー">ディナー</option>
+                <option value="コーヒー">コーヒー</option>
+                <option value="スポット">スポット</option>
+            </select>
+        </div>
+        <div class="freetext">
+            <p>メモ</p>
+            <textarea id="freetext" maxlength="150" placeholder="150文字以内"></textarea>
+        </div>
+        <div class="save">
+            <button id="save">保存する</button>
+        </div>
+        <ul class="tab">
+            <li><a href="#home" class="buttom3d">home</a></li>
+        </ul>
+    </div>
+    <!-- 表示画面 -->
+    <div class="content" id="firendsarch">
+        <ul class="tab">
+            <li><a href="#home" class="buttom3d">home</a></li>
+        </ul>
+        <p>一覧</p>
+        <div id=scroll>
+            <a href="#list" class="topbuttom"></a>
+        </div>
+    
+    </div>
+<!-- 検索画面 -->
+    <div class="content" id="shopsarch">
+        <div class="kensakudata">
+            <p>リストを検索</p>
+            <input type="text" id="search">
+            <div class="searchbutton">
+                <button id=searchbutton>検索する</button>
+            </div>
+        </div>
+        <div class="kensakuitem">
+            <span>店　　　名：<input type="text" id="kname"></span>
+            <span>保　存　日：<input type="text" id="getday"></span>
+            <span>エ　リ　ア：<input type="text" id="karea"></span>
+            <span>連　絡　先：<input type="text" id="kpnumber"></span>
+            <span>カテゴリー：<input type="text" id="kcategory"></span>
+            <span>
+                <a href="" class="listjump">リストへ</a>
+            </span>
+        </div>
+        <ul class="tab">
+            <li><a href="#home" class="buttom3d">home</a></li>
+        </ul>
+    </div>
+
+    </main>
+</body>
+</html>

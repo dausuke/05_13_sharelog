@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@900&family=Xanh+Mono:ital@1&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+}
+header h1{
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+    font-family: 'Xanh Mono', monospace;
+}
+section{
+    position: relative;
+}
+
+.modal{
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-color: rgba(44, 43, 43, 0.274);
+    display: none;
+    position: fixed;
+    overflow: auto;
+    top: 0;
+}
+.modal-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20%;
+}
+.modal-content input{
+    height: 1.5rem;
+    width: 15rem;
+    margin-bottom: 1rem;
+}
+.modal-content button{
+    height: 2rem;
+    width: 5rem;
+    font-size: 1rem;
+}
+button{
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: #3f51b5;
+    transition: .4s;
+    border: none;
+}
+
+button:hover {
+  background: #1ec7bb;
+}
+#signup{
+    height: 2rem;
+    width: 5rem;
+    font-size: 1rem;
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+}
