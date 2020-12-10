@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/demo.css" >
+    <link rel="stylesheet" href="css/main.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
     <title>sharelog</title>
 
 </head>
 <body>
-    <script src="js/demo.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/user.js"></script>
-    <script src="js/api.js"></script>
-    
+    <script src="js/map.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase.js"></script>
     <script>
         var firebaseConfig = {
@@ -30,8 +29,6 @@
     <script
         src='https://www.bing.com/api/maps/mapcontrol?key=AhmwRaCO2UjOzjohgXiSXzY3W7oTJh4Mbbt4qChfY17WbdgxXtUTAr6mppUmsbZ_'async defer>
     </script>
-    <!-- <script
-        src="https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPUhUakxxemMzSVcxTyZzPWNvbnN1bWVyc2VjcmV0Jng9ODY-"></script> -->
     <header>
         <h1>sharelog</h1>
     </header>
@@ -43,8 +40,7 @@
             <ul class="tab">
                 <li class="active"><a href="#mypage" class="buttom3d">Mypage</a></li>
                 <li><a href="#shopsarch" class="buttom3d">Shop-Sarch</a></li>
-                <li><a href="#firendsarch" class="buttom3d">Firend-Sarch</a></li>
-                <li><a href="#list" class="buttom3d">Massege</a></li>
+                <li><a href="#mymap" class="buttom3d">mymap</a></li>
             </ul>
         </div>
 <!-- マイページ -->
@@ -95,16 +91,13 @@
             <li><a href="#home" class="buttom3d">home</a></li>
         </ul>
     </div>
-    <!-- 表示画面 -->
-    <div class="content" id="firendsarch">
+    <!-- マップ画面 -->
+    <div class="content" id="mymap">
         <ul class="tab">
             <li><a href="#home" class="buttom3d">home</a></li>
         </ul>
-        <p>一覧</p>
-        <div id=scroll>
-            <a href="#list" class="topbuttom"></a>
-        </div>
-    
+        <p>マイマップ</p>
+        <div id=map class="map"></div>
     </div>
 <!-- 検索画面 -->
     <div class="content" id="shopsarch">
@@ -121,9 +114,6 @@
             <span>エ　リ　ア：<input type="text" id="karea"></span>
             <span>連　絡　先：<input type="text" id="kpnumber"></span>
             <span>カテゴリー：<input type="text" id="kcategory"></span>
-            <span>
-                <a href="" class="listjump">リストへ</a>
-            </span>
         </div>
         <ul class="tab">
             <li><a href="#home" class="buttom3d">home</a></li>

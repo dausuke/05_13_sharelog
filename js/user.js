@@ -9,7 +9,8 @@ $(function () {
 
     //api
     //緯度経度取得用の配列
-    const latlng = []
+    const latArray = [];
+    const lngArray = [];
 
     // 現在地を取得するときのオプション
     const option = {
@@ -21,8 +22,8 @@ $(function () {
     // 現在地の取得に成功したときの関数
     function mapsInit(position) {
         // console.log(position)
-        latlng.push(position.coords.latitude);
-        latlng.push(position.coords.longitude);
+        latArray.push(position.coords.latitude);
+        lngArray.push(position.coords.longitude);
     };
 
     // 現在位置の取得に失敗したの実行する関数
@@ -71,6 +72,8 @@ $(function () {
             evaluation: $('#evaluation').val(),
             category: $('#category').val(),
             freetext: $('#freetext').val(),
+            lat: latArray,
+            lng: lngArray,
             getday: new Date().toLocaleString({ timeZone: 'Asia/Tokyo' })
         };
         db.add(data);
@@ -81,7 +84,6 @@ $(function () {
         $('#evaluation').val('');
         $('#category').val('');
         $('#freetext').val('');
-        console.log(latlng);
     });
 
     //データリアルタイム取得
@@ -94,7 +96,6 @@ $(function () {
             };
             dataArray.push(data);
         });
-        console.log(dataArray);
 
         //ユーザーマイページ：自分の保存したデータ表示
         for (let i = 0; i < dataArray.length; i++) {      //保存しているすべてのデータ表示
@@ -181,4 +182,6 @@ $(function () {
     //     $('.modal').fadeOut();
     //     return false;
     // });
+
+    
 });
