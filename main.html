@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/main.css" >
+    <link rel="stylesheet" href="css/demo.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
     <title>sharelog</title>
+
 </head>
 <body>
-    <script src="js/main.js"></script>
-    <script src="index.js"></script>
+    <script src="js/demo.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/api.js"></script>
+    
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase.js"></script>
     <script>
         var firebaseConfig = {
@@ -24,21 +27,29 @@
         };
         firebase.initializeApp(firebaseConfig);
     </script>
+    <script
+        src='https://www.bing.com/api/maps/mapcontrol?key=AhmwRaCO2UjOzjohgXiSXzY3W7oTJh4Mbbt4qChfY17WbdgxXtUTAr6mppUmsbZ_'async defer>
+    </script>
+    <!-- <script
+        src="https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPUhUakxxemMzSVcxTyZzPWNvbnN1bWVyc2VjcmV0Jng9ODY-"></script> -->
     <header>
         <h1>sharelog</h1>
     </header>
     <main>
-<!-- メニュー画面 -->
-    <div class="content active" id="manu">
-        <ul class="tab">
-            <li class="active"><a href="#nyuryoku" class="buttom3d">入力</a></li>
-            <li><a href="#kensaku" class="buttom3d">検索</a></li>
-            <li><a href="#list" class="buttom3d">リスト</a></li>
-        </ul>
-        
-    </div>
-<!-- 入力画面 -->
-    <div class="content" id="nyuryoku">
+<!-- タイムライン -->
+        <div class="content active" id="home">
+            <!-- <div id="map"></div> -->
+            <div id="timeline"></div>
+            <ul class="tab">
+                <li class="active"><a href="#mypage" class="buttom3d">Mypage</a></li>
+                <li><a href="#shopsarch" class="buttom3d">Shop-Sarch</a></li>
+                <li><a href="#firendsarch" class="buttom3d">Firend-Sarch</a></li>
+                <li><a href="#list" class="buttom3d">Massege</a></li>
+            </ul>
+        </div>
+<!-- マイページ -->
+    <div class="content" id="mypage">
+        <div id="mypagetimeline"></div>
         <div class="name">
             <p>店名</p>
             <input type="text" id="name">
@@ -75,17 +86,28 @@
         </div>
         <div class="freetext">
             <p>メモ</p>
-            <textarea id="freetext"></textarea>
+            <textarea id="freetext" maxlength="150" placeholder="150文字以内"></textarea>
         </div>
         <div class="save">
             <button id="save">保存する</button>
         </div>
         <ul class="tab">
-            <li><a href="#manu" class="buttom3d">メニュー</a></li>
+            <li><a href="#home" class="buttom3d">home</a></li>
         </ul>
     </div>
+    <!-- 表示画面 -->
+    <div class="content" id="firendsarch">
+        <ul class="tab">
+            <li><a href="#home" class="buttom3d">home</a></li>
+        </ul>
+        <p>一覧</p>
+        <div id=scroll>
+            <a href="#list" class="topbuttom"></a>
+        </div>
+    
+    </div>
 <!-- 検索画面 -->
-    <div class="content" id="kensaku">
+    <div class="content" id="shopsarch">
         <div class="kensakudata">
             <p>リストを検索</p>
             <input type="text" id="search">
@@ -104,21 +126,10 @@
             </span>
         </div>
         <ul class="tab">
-            <li><a href="#manu" class="buttom3d">メニュー</a></li>
+            <li><a href="#home" class="buttom3d">home</a></li>
         </ul>
     </div>
-<!-- 表示画面 -->
-    <div class="content" id="list">
-        <ul class="tab">
-            <li><a href="#manu" class="buttom3d">メニュー</a></li>
-        </ul>
-        <p>一覧</p>
-        <div id = scroll>
-            <a href="#list" class="topbuttom"></a>
-        </div>
-        
-    </div>
+
     </main>
-    
 </body>
 </html>
