@@ -16,12 +16,18 @@ header{
     background-color: white;
     border-bottom:solid 1px lightgray ;
 }
+header span{
+    position: absolute;
+    right: 5%;
+    top: 10%;
+}
 h1{
     font-family: 'Xanh Mono', monospace;
     font-size: 3rem;
     font-weight: bold;
     color:black;
-    text-shadow: 1.5px 1.5px 1.5px #333;
+    letter-spacing:5px;
+    text-shadow: 1.5px 1.5px 1.5px rgb(160, 158, 158);
     margin: 0;
     position: absolute;
     left: 5%;
@@ -61,11 +67,11 @@ main{
     flex-direction: column;
     position: fixed;
     top: 20%;
+    left: 50%;
     right: 0;
     margin: 0;
 }
 .tab li{
-    font-size: 20px;
     width: 300px;
 	height: 60px;  
     margin-bottom: 3em;
@@ -82,12 +88,6 @@ main{
     margin-top: 4rem;
     margin-bottom: 3rem;
 }
-.timelinesection{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
 
 .timelineitem {
     width: 100%;
@@ -95,12 +95,12 @@ main{
     background-color: white;
     border: solid 1px lightgray;
     margin-bottom: 2rem;
-
+    position: relative;
+    left: -30%;
 }
 .timelineitem header{
     margin: 0;
     height: 15%;
-    position: relative;
 }
 .timelinecontent{
     width: 100%;
@@ -233,46 +233,27 @@ select{
 }
 /* 検索画面 */
 .kensakuitem{
-    background-color: rgba(211, 211, 211, 0.438);
-    margin-top: 5rem;
+    background-color:white;
+    margin-top: 3rem;
     width: 100%;
-    height: 20rem;
+    height: 30rem;
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
 }
 .kensakuitem span{
-    display: block;
-    position: absolute;
+   margin-top: 2rem;
 }
 .kensakuitem span input{
     background-color: white;
+    border: solid 2px;
 }
 .kensakudata p{
     font-size: 1.5rem;
 }
-.kensakuitem span:nth-child(1){
-    top: 1.5rem;
-}
-.kensakuitem span:nth-child(2){
-    left: 1rem;
-    top: 40%;
-}
-.kensakuitem span:nth-child(3){
-    left: 1rem;
-    bottom: 3rem;
-}
-.kensakuitem span:nth-child(4){
-    right: 1rem;
-    bottom: 3rem;
-}
-.kensakuitem span:nth-child(5){
-    right: 1rem;
-    top: 40%;
-}
+
 /* マップ画面 */
 .map{
     height: 400px;
@@ -282,89 +263,3 @@ select{
 
 }
 
-@media screen and (max-width: 480px) {
-    /* 480px以下に適用されるCSS（スマホ用） */
-    html{
-        font-size: 10px;
-    }
-    body{
-        font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-    }
-    header{
-        width: 100%;
-    }
-    section{
-        width: 100%;
-    }
-    h1{
-        letter-spacing: -0.2em;
-    }
-    .kensakuitem{
-        background-color: lightgray;
-        width: 100%;
-        height: 40rem;
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-    }   
-    .kensakuitem span{
-        display: block;
-        position:static;
-        margin-bottom: 1rem;
-    }
-    .kensakudata p{
-        font-size: 1.5rem;
-    }
-    .kensakuitem span:nth-child(5){
-        margin-bottom: 5rem;
-    }
-    /* リスト一覧へのリンクボタン */
-    .kensakuitem span:nth-child(6){
-        right: 2rem;        
-        top: 1.5rem;
-        font-size: 1.3rem;
-        width: 7.5rem;
-        border-bottom: 5px solid #9f000c;
-        background-color:  #fa0303;
-        border-radius: 100vh;
-    }
-    .kensakuitem span:nth-child(6):active{
-        transform: translateY(5px);
-  	    border-bottom: none;
-    }
-    .kensakuitem span a{
-        text-decoration: none;
-        padding: 0.3rem;
-        color: white;
-    }
-    .listitem {
-        width: 100%;
-        height: 65rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin: 0;
-        border-top: rgb(64, 6, 224) solid 2px;
-    }
-    .clear{
-        right: 2rem;        
-        bottom: 1.5rem;
-        font-size: 1.3rem;
-        width: 7.5rem;
-        border-bottom: 5px solid #9f000c;
-        background-color:  #fa0303;
-        border-radius: 100vh;
-        color: white;
-        position: static;
-    }
-    #scroll{
-        z-index: 10;
-    }
-    .listitem{
-        z-index: 5;
-    }
-}

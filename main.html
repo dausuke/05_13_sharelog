@@ -11,13 +11,10 @@
 
 </head>
 <body>
-    <script src="js/main.js"></script>
-    <script src="js/user.js"></script>
-    <script src="js/map.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase.js"></script>
     <script>
         var firebaseConfig = {
-            apiKey: "",
+            apiKey: "AIzaSyAYaOy_ZBgAAVm5G3GLWLSFMbgt1aAZWL0",
             authDomain: "kadai05-df4da.firebaseapp.com",
             projectId: "kadai05-df4da",
             storageBucket: "kadai05-df4da.appspot.com",
@@ -27,10 +24,12 @@
         firebase.initializeApp(firebaseConfig);
     </script>
     <script
-        src='https://www.bing.com/api/maps/mapcontrol?key='async defer>
+        src='https://www.bing.com/api/maps/mapcontrol?key=AhmwRaCO2UjOzjohgXiSXzY3W7oTJh4Mbbt4qChfY17WbdgxXtUTAr6mppUmsbZ_'async defer>
     </script>
+    <script src="js/main.js"></script>
     <header>
         <h1>sharelog</h1>
+        <span id="signout">signout</span>
     </header>
     <main>
 <!-- タイムライン -->
@@ -46,52 +45,13 @@
 <!-- マイページ -->
     <div class="content" id="mypage">
         <div id="mypagetimeline"></div>
-        <div class="name">
-            <p>店名</p>
-            <input type="text" id="name">
-        </div>
-        <div class="area">
-            <p>エリア</p>
-            <input type="text" id="area">
-        </div>
-        <div class="pnumber">
-            <p>電話番号</p>
-            <input type="text" id="pnumber">
-        </div>
-        <div class="evaluation">
-            <p>評価</p>
-            <select type="text" id="evaluation">
-                <option value="">選択</option>
-                <option value="★★★★★">★★★★★</option>
-                <option value="★★★★">★★★★</option>
-                <option value="★★★">★★★</option>
-                <option value="★★">★★</option>
-                <option value="★">★</option>
-            </select>
-        </div>
-        <div class="category">
-            <p>カテゴリー</p>
-            <select type="text" id="category">
-                <option value="">選択</option>
-                <option value="ファッション">ファッション</option>
-                <option value="ランチ">ランチ</option>
-                <option value="ディナー">ディナー</option>
-                <option value="コーヒー">コーヒー</option>
-                <option value="スポット">スポット</option>
-            </select>
-        </div>
-        <div class="freetext">
-            <p>メモ</p>
-            <textarea id="freetext" maxlength="150" placeholder="150文字以内"></textarea>
-        </div>
-        <div class="save">
-            <button id="save">保存する</button>
-        </div>
+        <div id="savearea"></div>
         <ul class="tab">
+            <li id="savelog" class="buttom3d">SaveLog</li>
             <li><a href="#home" class="buttom3d">home</a></li>
         </ul>
     </div>
-    <!-- マップ画面 -->
+<!-- マップ画面 -->
     <div class="content" id="mymap">
         <ul class="tab">
             <li><a href="#home" class="buttom3d">home</a></li>
@@ -109,11 +69,11 @@
             </div>
         </div>
         <div class="kensakuitem">
-            <span>店　　　名：<input type="text" id="kname"></span>
-            <span>保　存　日：<input type="text" id="getday"></span>
-            <span>エ　リ　ア：<input type="text" id="karea"></span>
-            <span>連　絡　先：<input type="text" id="kpnumber"></span>
-            <span>カテゴリー：<input type="text" id="kcategory"></span>
+            <span>店　　　名<input type="text" id="kname"></span>
+            <span>保　存　日<input type="text" id="getday"></span>
+            <span>エ　リ　ア<input type="text" id="karea"></span>
+            <span>連　絡　先<input type="text" id="kpnumber"></span>
+            <span>カテゴリー<input type="text" id="kcategory"></span>
         </div>
         <ul class="tab">
             <li><a href="#home" class="buttom3d">home</a></li>
